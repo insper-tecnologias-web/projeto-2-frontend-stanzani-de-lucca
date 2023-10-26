@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -11,8 +12,11 @@ const Hero = () => {
           Meet <span className="font-semibold">Moody</span>: an opinionated AI
           companion for you to discover fresh and exciting tunes.
         </p>
-        <Button className="bg-neutral-200 text-neutral-900 hover:bg-neutral-200/90">
-          Get started
+        <Button
+          className="bg-neutral-200 text-neutral-900 hover:bg-neutral-200/90"
+          asChild
+        >
+          <Link to="/moods">Get started</Link>
         </Button>
       </div>
     </div>
