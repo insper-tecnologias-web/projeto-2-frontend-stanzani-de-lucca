@@ -2,6 +2,15 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Container from "@/components/container";
 
+/**
+ * Moods:
+ * --> Energético
+ * --> Melancólico
+ * --> Romântico
+ * --> Nostálgico
+ * --> Confiante
+ */
+
 const Hero = () => {
   return (
     <Container className="mt-32 lg:mt-24">
