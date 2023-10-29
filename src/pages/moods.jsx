@@ -39,7 +39,7 @@ const Moods = () => {
     {
       id: 3,
       name: "Teenage Dream",
-      color: "group-hover:text-[#A67A84]",
+      color: "group-hover:text-[#DC7E94]",
       description: "If you're feeling nostalgic.",
       icon: BookHeart,
     },
