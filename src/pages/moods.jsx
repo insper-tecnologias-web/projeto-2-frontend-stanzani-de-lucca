@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Sparkles, Zap, Heart, BookHeart, HeartCrack } from "lucide-react";
 import PartyPopper from "@/components/party-popper";
 
@@ -7,7 +8,10 @@ import { cn } from "@/lib/utils";
 
 const MoodCard = ({ mood }) => {
   return (
-    <div className="group flex h-40 cursor-pointer flex-col justify-between rounded-md border border-zinc-800 bg-neutral-900 p-3.5 transition-all hover:bg-neutral-800">
+    <Link
+      to={`/moods/${mood.slug}`}
+      className="group flex h-40 cursor-pointer flex-col justify-between rounded-md border border-zinc-800 bg-neutral-900 p-3.5 transition-all hover:bg-neutral-800"
+    >
       <div>
         <h2 className="mb-0.5 text-xl font-medium">{mood.name}</h2>
         <p className="text-sm text-neutral-500">{mood.description}</p>
@@ -16,7 +20,7 @@ const MoodCard = ({ mood }) => {
         size={30}
         className={cn("self-end transition-all", mood.color)}
       />
-    </div>
+    </Link>
   );
 };
 
@@ -28,6 +32,7 @@ const Moods = () => {
       color: "group-hover:text-amber-600",
       description: "If you're feeling energetic.",
       icon: Zap,
+      slug: "electric-feel",
     },
     {
       id: 2,
@@ -35,6 +40,7 @@ const Moods = () => {
       color: "group-hover:text-red-600",
       description: "If you're feeling romantic.",
       icon: Heart,
+      slug: "instant-crush",
     },
     {
       id: 3,
@@ -42,6 +48,7 @@ const Moods = () => {
       color: "group-hover:text-[#DC7E94]",
       description: "If you're feeling nostalgic.",
       icon: BookHeart,
+      slug: "teenage-dream",
     },
     {
       id: 4,
@@ -49,6 +56,7 @@ const Moods = () => {
       color: "group-hover:text-blue-600",
       description: "If you're feeling down.",
       icon: HeartCrack,
+      slug: "my-dear-melancholy",
     },
     {
       id: 5,
@@ -56,6 +64,7 @@ const Moods = () => {
       color: "group-hover:text-pink-600",
       description: "If you're feeling confident.",
       icon: PartyPopper,
+      slug: "dance-the-night",
     },
   ];
 
