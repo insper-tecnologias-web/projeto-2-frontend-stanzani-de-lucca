@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  Sparkles,
-  Zap,
-  Heart,
-  BookHeart,
-  HeartCrack,
-  PartyPopper,
-} from "lucide-react";
+import { Sparkles, Zap, Heart, BookHeart, HeartCrack } from "lucide-react";
+import PartyPopper from "@/components/party-popper";
 
 import Container from "@/components/container";
 import { cn } from "@/lib/utils";
@@ -18,12 +12,10 @@ const MoodCard = ({ mood }) => {
         <h2 className="mb-0.5 text-xl font-medium">{mood.name}</h2>
         <p className="text-sm text-neutral-500">{mood.description}</p>
       </div>
-      {mood.icon ? (
-        <mood.icon
-          size={30}
-          className={cn("self-end transition-all", mood.color)}
-        />
-      ) : null}
+      <mood.icon
+        size={30}
+        className={cn("self-end transition-all", mood.color)}
+      />
     </div>
   );
 };
