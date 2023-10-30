@@ -19,8 +19,8 @@ const MoodCard = ({ mood }) => {
       </div>
       <mood.icon
         size={30}
-        className={cn("self-end transition-all", `group-hover:${mood.color}`)}
-        colorOnHover={true}
+        className={cn("self-end transition-all", `${mood.onHover}`)}
+        {...mood.iconProps}
       />
     </Link>
   );
