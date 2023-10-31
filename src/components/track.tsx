@@ -12,7 +12,7 @@ const Track = ({
     <div className="flex cursor-pointer flex-row items-center gap-2.5 rounded-md bg-neutral-900 px-2 py-2.5 transition-colors hover:bg-neutral-800 md:gap-4">
       {/* <div className="h-11 w-11 min-w-[2.75rem] rounded-md bg-white"></div> */}
       <img
-        className="2-9 h-9 min-w-[2.25rem]"
+        className="2-9 h-9 min-w-[2.25rem] rounded-sm opacity-80"
         src={artworkSrc ? artworkSrc.url : ""}
         alt={`${track.album.name} artwork.`}
       />
