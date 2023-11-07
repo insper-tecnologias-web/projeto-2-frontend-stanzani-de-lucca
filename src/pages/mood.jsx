@@ -24,8 +24,8 @@ const Mood = () => {
 
   useEffect(() => {
     playlist
-      .get()
-      .then((data) => setTracks(data))
+      .get(mood.slug)
+      .then((data) => setTracks(data.tracks))
       .catch((error) => setShowError(true));
   }, []);
 
@@ -46,7 +46,9 @@ const Mood = () => {
       ) : (
         <div className="space-y-2 pb-8">
           {tracks
-            ? tracks.map((track) => <Track key={track.id} track={track} />)
+            ? tracks.map((track, i) => (
+                <Track key={track.id} track={track} songId={i + 1} />
+              ))
             : null}
         </div>
       )}

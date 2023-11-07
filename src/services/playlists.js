@@ -2,8 +2,8 @@ import axios from "axios";
 
 const baseUrl = "http://localhost:8000";
 
-const get = () => {
-  const request = axios.get(`${baseUrl}/tracks`);
+const get = (slug) => {
+  const request = axios.get(`${baseUrl}/api/f/generate/${slug}/`);
   return request.then((response) => response.data);
 };
 
