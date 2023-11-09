@@ -11,9 +11,9 @@ const Track = ({
       : track.album.images[track.album.images.length - 1];
 
   return (
-    <div className="flex cursor-pointer flex-row items-center gap-2.5 rounded-md bg-neutral-900 px-3.5 py-2.5 transition-colors hover:bg-[#1B1B1B] md:gap-4">
+    <div className="flex cursor-pointer flex-row items-center gap-2.5 px-3.5 py-2.5 transition-colors">
       {/* <div className="h-11 w-11 min-w-[2.75rem] rounded-md bg-white"></div> */}
-      <p className="text-xs text-neutral-300">{songId.toString()}</p>
+      <p className="text-xs text-neutral-300 pr-2 pl-1">{songId.toString()}</p>
       <img
         className="2-9 h-9 min-w-[2.25rem] rounded-sm opacity-80"
         src={artworkSrc ? artworkSrc.url : ""}
