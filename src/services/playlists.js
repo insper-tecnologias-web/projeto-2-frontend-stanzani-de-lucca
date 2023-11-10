@@ -3,11 +3,22 @@ import axios from "axios";
 const baseUrl = "http://localhost:8000";
 
 const get = (slug) => {
-  // const request = axios.get(`${baseUrl}/api/f/generate/${slug}/`);
-  const request = axios.get("http://10.102.1.43:8000/tracks");
-  return request.then((response) => response.data);
+  console.log("Running GET request to the server.");
+  const request = axios.get(`${baseUrl}/api/f/generate/${slug}/`);
+  return request.then((response) => {
+    return response.data;
+  });
+};
+
+const createAndAddToSpotify = (mood, tracks, access_token) => {
+  const data = { mood, tracks, access_token };
+  const request = axios.post(`${baseUrl}/api/add-to-spotify/`, data);
+  return request.then((response) => {
+    return response.data;
+  });
 };
 
 export default {
   get,
+  createAndAddToSpotify,
 };

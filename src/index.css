@@ -30,7 +30,7 @@ body {
   animation: gradientAnimation 2s ease-in-out infinite alternate;
 }
 
-@keyframes spin {
+@keyframes spinThunder {
   0% {
     transform: rotate(-10deg);
   }
@@ -43,7 +43,7 @@ body {
 }
 
 .spinning-thunder-container {
-  animation-name: spin;
+  animation-name: spinThunder;
   animation-duration: 2s; /* Adjust the duration as needed */
   animation-iteration-count: infinite; /* Make the animation repeat */
   animation-timing-function: linear; /* Control the timing of the animation */
