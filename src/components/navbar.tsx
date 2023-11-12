@@ -8,18 +8,18 @@ const Navbar = () => {
         <img src={MoodyLogo} alt="Moody." />
       </Link>
       <div className="hidden space-x-6 lg:block">
-        <a
+        {/* <a
           className="rounded-md px-1.5 py-1.5 font-medium tracking-tight transition-all hover:bg-neutral-800"
           href="#"
         >
           What we love
-        </a>
-        <a
+        </a> */}
+        <Link
           className="rounded-md px-1.5 py-1.5 font-medium tracking-tight transition-all hover:bg-neutral-800"
-          href="#"
+          to="/about"
         >
           About us
-        </a>
+        </Link>
       </div>
     </header>
   );

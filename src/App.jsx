@@ -11,6 +11,7 @@ import LandingPage from "@/pages/landing-page";
 import Moods from "@/pages/moods";
 import Mood from "@/pages/mood";
 import Callback from "@/pages/callback";
+import About from "@/pages/about";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="moods" element={<Moods />} />
       <Route path="/moods/:mood" element={<Mood />} />
       <Route path="/callback" element={<Callback />} />
+      <Route path="/about" element={<About />} />
     </Route>,
   ),
 );
