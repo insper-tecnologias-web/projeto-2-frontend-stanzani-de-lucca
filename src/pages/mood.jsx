@@ -120,8 +120,6 @@ const Mood = () => {
   }, []);
 
   const handleAddToSpotify = () => {
-    console.log("Got called.");
-
     if (addToSpotifyIsLoading) {
       return;
     }
@@ -141,6 +139,9 @@ const Mood = () => {
         })
         .catch((error) => {
           console.log(error);
+          // This is very likely to be an authentication error.
+          // In this case, we must log the user out and show an error message.
+          window.localStorage.removeItem("access_token");
         })
         .finally(() => {
           setAddToSpotifyIsLoading(false);
