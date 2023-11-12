@@ -16,6 +16,29 @@ import Container from "@/components/container";
 import Track from "@/components/track";
 import Spinner from "@/components/spinner";
 
+import { ToastAction } from "@/components/ui/toast";
+import { toast, useToast } from "@/components/ui/use-toast";
+
+export function ToastDestructive() {
+  const { toast } = useToast();
+
+  return (
+    <Button
+      variant="outline"
+      onClick={() => {
+        toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request.",
+          action: <ToastAction altText="Try again">Try again</ToastAction>,
+        });
+      }}
+    >
+      Show Toast
+    </Button>
+  );
+}
+
 const buildSpotifyUrl = () => {
   const scope =
     "user-read-private user-read-email user-library-read playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private";
@@ -142,6 +165,11 @@ const Mood = () => {
           // This is very likely to be an authentication error.
           // In this case, we must log the user out and show an error message.
           window.localStorage.removeItem("access_token");
+          toast({
+            variant: "destructive",
+            title: "Uh oh! Something went wrong.",
+            description: "There was a problem with your request. Please try again.",
+          });
         })
         .finally(() => {
           setAddToSpotifyIsLoading(false);
